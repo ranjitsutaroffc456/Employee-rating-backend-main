@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class LoginResponse {
     private String message;
-    private String role;
+    private String employeeRole;
     private String employeeId;  // returning employeeId (userId from DB)
     private String employeeName;
     private String redirectUrl;

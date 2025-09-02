@@ -44,11 +44,10 @@ public class AuthServiceImpl implements AuthService {
         String email = null;
         switch (employee.getEmployeeRole().toLowerCase()) {
             case "developer":
-                redirectUrl = "/Nutan-dashboard";
+                redirectUrl = "https://employee-task-summary.vercel.app/";
                 break;
-            case "team lead":
-            case "teamlead":
-                redirectUrl = "/Anwesha-dashboard";
+            case "team lead","teamlead":
+                redirectUrl = "https://team-lead-rating.vercel.app/";
                 email = employee.getEmployeeEmail();
                 break;
             // Any other role → no redirect

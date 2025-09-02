@@ -15,6 +15,7 @@ import com.EmployeeRating.ServiceImplementation.EmployeeRegistrationServiceImpl;
 
 @RestController
 @RequestMapping("/api")
+@CrossOrigin(origins = "*")
 public class EmployeeRegistrationController {
 	
 	@Autowired

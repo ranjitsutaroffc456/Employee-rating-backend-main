@@ -11,6 +11,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.AllArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -28,8 +29,10 @@ public class EmployeeTaskController {
     private EmployeeTaskService taskService;
     private ObjectMapper objectMapper;
     private EmployeeRepo employeeRepo;
-
-    @PostMapping("/submit/{employeeId}")
+    @PostMapping(
+            value = "/submit/{employeeId}",
+            consumes = { MediaType.MULTIPART_FORM_DATA_VALUE }
+    )
     public ResponseEntity<?> submitTasks(
             @PathVariable String employeeId,
             @RequestPart("tasks") String tasksJson,
